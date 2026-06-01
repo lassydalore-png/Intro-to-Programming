@@ -32,4 +32,15 @@ var addColors = function (howManyTimes) {
 } console.log(p + ":D");
 };
 
+for (var c = 3; c < 6; c++) {
+    console.log(c + ":(");
+};
+VM210:2 3:(
+VM210:2 4:(
+VM210:2 5:(
+undefined
+//without a function//
+undefined
+
+
 addColors(4);
