@@ -25,3 +25,11 @@ VM659:5 9=^.^=
 VM659:5 10=^.^=
 VM659:5 11=^.^=
 undefined
+
+var addColors = function (howManyTimes) {
+
+    for (p = 0; p < howManyTimes; p++) {
+} console.log(p + ":D");
+};
+
+addColors(4);
