@@ -1,0 +1,27 @@
+//
+var drawCats = function (howManyTimes) {
+    
+    for (var i = 0; i < howManyTimes; i++) {
+        console.log(i+ "=^.^=");
+}
+};
+dr
+    
+VM659:8 Uncaught ReferenceError: dr is not defined
+    at <anonymous>:8:1
+(anonymous) @ VM659:8Understand this error
+drawCats(12);
+
+VM659:5 0=^.^=
+VM659:5 1=^.^=
+VM659:5 2=^.^=
+VM659:5 3=^.^=
+VM659:5 4=^.^=
+VM659:5 5=^.^=
+VM659:5 6=^.^=
+VM659:5 7=^.^=
+VM659:5 8=^.^=
+VM659:5 9=^.^=
+VM659:5 10=^.^=
+VM659:5 11=^.^=
+undefined
