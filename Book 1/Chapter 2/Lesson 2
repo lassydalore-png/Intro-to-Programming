@@ -7,3 +7,9 @@ balloons *= 2;
 var balloons = 100;
 balloons /= 4;
 25
+
+var age = 12;
+var accompanied = true;
+var admittanceGranted = age >= 13 || accompanied;
+admittanceGranted;
+true
