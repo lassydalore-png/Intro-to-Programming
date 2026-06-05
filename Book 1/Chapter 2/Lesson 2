@@ -1,2 +1,9 @@
 (15 + 9) * 2
 48
+
+var balloons = 100;
+balloons *= 2;
+200
+var balloons = 100;
+balloons /= 4;
+25
