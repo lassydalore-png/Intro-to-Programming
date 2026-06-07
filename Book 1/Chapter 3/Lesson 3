@@ -8,3 +8,14 @@ var randomWord = randomWords[Math.floor(Math.random()*3)];
 
 var randomInsult = "Your " + randomBodyPart + " is like a " + randomAdjective + " " + randomWord + "!!!";
 randomInsult;
+
+var randomBodyParts = ["ears", "face", "nose"];
+var randomAdjectives = ["big", "stinky", "weird"];
+var randomWords = ["bulge", "rat", "mouse", "banana", "tornado"];
+
+var randomBodyPart = randomBodyParts[Math.floor(Math.random()*3)];
+var randomAdjective = randomAdjectives[Math.floor(Math.random()*3)];
+var randomWord = randomWords[Math.floor(Math.random()*randomWords.length)];
+
+var randomInsult = "Your " + randomBodyPart + " is like a " + randomAdjective + " " + randomWord + "!!!";
+randomInsult;
