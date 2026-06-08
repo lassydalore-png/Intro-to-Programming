@@ -35,7 +35,6 @@ var randomInsult = "Your " + randomBodyPart + " is more " + randomAdjective + " 
 randomInsult;
 
 var randomBodyParts = ["face", "head", "nose"];
-randomBodyParts.join(" + ");
 var randomAdjectives = ["replusive", "stinky", "ugly"];
 var randomAnimals = ["cow", "dog", "rat"]; 
 var randomAnimalBodyParts = ["breath", "ear", "mouth", "nose"];
@@ -45,12 +44,10 @@ var randomAdjective = randomAdjectives[Math.floor(Math.random () *3)];
 var randomAnimal = randomAnimals[Math.floor(Math.random () *3)];
 var randomAnimalBodyPart = randomAnimalBodyParts[Math.floor(Math.random () *randomAnimalBodyParts.length)];
 
-var randomInsult = "Your " + randomBodyPart + " is more " + randomAdjective + " than a " + randomAnimal + 
-    "'s " + randomAnimalBodyPart;
+var randomInsult = ["Your ", randomBodyPart, " is more ", randomAdjective, " than a " , randomAnimal, 
+    "'s ", randomAnimalBodyPart];
+randomInsult.join(" ");
 randomInsult;
-"Your nose is more stinky than a cow's mouth"
-randomBodyParts
-(3) ['face', 'head', 'nose']
 
 var numbers = [3, 2, 1];
 numbers.join(" is bigger than ");
