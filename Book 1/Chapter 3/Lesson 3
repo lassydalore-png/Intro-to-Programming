@@ -33,3 +33,13 @@ var randomAnimalBodyPart = randomAnimalBodyParts[Math.floor(Math.random () *rand
 var randomInsult = "Your " + randomBodyPart + " is more " + randomAdjective + " than a " + randomAnimal + 
     "'s " + randomAnimalBodyPart;
 randomInsult;
+
+var randomBodyParts = ["face", "head", "nose"];
+var randomBodyPartsString = randomBodyParts.join("*");
+undefined
+randomAnimalBodyParts
+(4) ['breath', 'ear', 'mouth', 'nose']
+
+var numbers = [3, 2, 1];
+numbers.join(" is bigger than ");
+'3 is bigger than 2 is bigger than 1'
