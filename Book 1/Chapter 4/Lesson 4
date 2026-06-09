@@ -1,0 +1,41 @@
+// An array called "scores" containing 3 objects.
+// Each object represents a person with a name and a score.
+var scores = [
+  {
+    name: "Amy",
+    score: 9,
+  },
+
+  {
+    name: "Strepie",
+    score: 1,  
+  },
+
+  {
+    name: "Davey",
+    score: 18, 
+  }
+]
+
+// Update the score INSIDE each object using dot notation.
+// scores[0] is the first object → { name: "Amy", score: 9 }
+// scores[0].score accesses the number 9 and updates it.
+scores[0].score += 3;   // Amy: 9 → 12
+scores[1].score += 1;   // Strepie: 1 → 2
+scores[2].score -= 2;   // Davey: 18 → 16
+
+// Log the entire array so you can see all updated objects
+console.log("Scores: ", scores);
+
+var myCrazyObject = {
+  name: "A ridiculous object",
+  some_array: [7, 9, {purpose:"confusion", Number:123}, 3.3],
+  random_animal: "Banana Shark",
+};
+
+// some_array[2] is an object → { purpose: "confusion", Number: 123 }
+// To get ONLY the number, access the Number property inside that object
+console.log("Fetch number:", myCrazyObject.some_array[2].Number);
+
+// Log only Strepie's score (object at index 1)
+console.log("Strepie: ", scores[1].score);
