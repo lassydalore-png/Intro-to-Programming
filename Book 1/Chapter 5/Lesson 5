@@ -1,18 +1,44 @@
 <!DOCTYPE html>
+<!-- Tells the browser this is an HTML5 document -->
+
 <html>
 <head>
 	<title> My favorite websites</title>
+	<!-- The <title> is what appears on the browser tab -->
 </head> 
 
 <body>
+<!-- Everything visible on the page lives inside <body> -->
+
 <h1><strong>First Favourite Website</strong></h1>
-	<p> Our World in Data. <a href="https://ourworldindata.org/" title="Our World in Data"> Click here </a> to see <em> Our World in Data</em>
-	</p>
-<h1><strong> Second Favouorite Website </strong></h1>
-	<p> For some light-hearted entertainment <a href="https://www.cracked.com/" title="Cracked.com"> Click here </a>. 
-	</p>
+<!-- Main heading for the first website section -->
+
+<p>
+	<!-- Paragraph describing the first website -->
+	Our World in Data. 
+	<a href="https://ourworldindata.org/" title="Our World in Data"> Click here </a> 
+	<!-- <a> creates a hyperlink; href is the URL; title shows on hover -->
+	to see <em> Our World in Data</em>
+	<!-- <em> italicizes text for emphasis -->
+</p>
+
+<h1><strong> Second Favourite Website </strong></h1>
+<!-- Main heading for the second website section -->
+
+<p>
+	<!-- Paragraph describing the second website -->
+	For some light-hearted entertainment 
+	<a href="https://www.cracked.com/" title="Cracked.com"> Click here </a>.
+</p>
+
 <h1><strong> Third Favourite Website</strong></h1>
-	<p> For a bit of personal philosophy and some humour, read my own personal Medium website <a href ="https://medium.com/@lassydalore/" title="Medium: Lauren Shepley"> Click here </a>.
-	</p>
+<!-- Main heading for the third website section -->
+
+<p>
+	<!-- Paragraph describing the third website -->
+	For a bit of personal philosophy and some humour, read my own personal Medium website 
+	<a href ="https://medium.com/@lassydalore/" title="Medium: Lauren Shepley"> Click here </a>.
+</p>
+
 </body>
 </html>
