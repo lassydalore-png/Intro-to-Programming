@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <!-- Ensures the page displays characters correctly -->
+
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <!-- Makes the page scale properly on phones/tablets -->
+
+  <title>Homework for Chapter 6</title>
+  <!-- Title shown on the browser tab -->
+
+  <link rel='stylesheet' href='main.css'>
+  <!-- Links to an external CSS file for styling -->
+</head>
+
+<body>
+  <script>
+    /* -------------------------------
+       SECTION 1: Choosing a meal
+       ------------------------------- */
+
+    var friedRice = false;
+    var beefNoodles = false;
+    var chickenNoodles = false;
+    // Three boolean variables representing food choices
+
+    if (friedRice) {
+      // Runs only if friedRice is true
+      console.log("Fried Rice it is!");
+    } else if (beefNoodles) {
+      // Runs only if friedRice is false AND beefNoodles is true
+      console.log("Beed Noodles it is!");
+    } else if (chickenNoodles) {
+      // Runs only if the first two are false AND chickenNoodles is true
+      console.log("Okay, Chicken Noodles it is!"); 
+    } else {
+      // Runs if ALL three options are false
+      console.log("Well I'll guess I'll be having nothing!")
+    }
+
+
+    /* -------------------------------
+       SECTION 2: Loop multiplying by 3
+       ------------------------------- */
+
+    var loop = 3;
+    // Start value
+
+    while (loop < 10000) {
+      // Loop continues as long as loop is less than 10000
+      console.log(loop);
+      loop = loop * 3;
+      // Each time, multiply loop by 3
+    }
+
+
+    /* -------------------------------
+       SECTION 3: Looping through an array
+       ------------------------------- */
+
+    var animals = ["Cat", "Fish", "Lemur", "Komodo Dragon", "Snake"];
+    // Array of animal names
+
+    for (var a = 0; a < animals.length; a++) {
+      // Loop runs once for each item in the array
+      console.log("Awesome " + animals[a] + "!");
+      // Prints a message using each animal
+    }
+
+
+    /* -------------------------------
+       SECTION 4: Alphabet + random string
+       ------------------------------- */
+
+    var alphabet = "abcdefghijklmnopqrstuvwxyz";
+    // A string containing all letters of the alphabet
+    console.log(alphabet);
+
+    var randomString = "";
+    // Start with an empty string
+    console.log(randomString);
+
+    while (randomString.length < 6) {
+      // Keep looping until the string has 6 characters
+
+      var randomIndex = Math.floor(Math.random() * alphabet.length);
+      // Picks a random number between 0 and 25
+      console.log(randomIndex);
+
+      var randomLetter = alphabet[randomIndex];
+      // Uses the random number to select a letter
+      console.log(randomLetter);
+
+      randomString = randomString + randomLetter;
+      // Adds the random letter to the growing string
+    }
+
+    console.log(randomString);
+    // Final 6‑letter random string
+
+
+    /* -------------------------------
+       SECTION 5: Replacing letters
+       ------------------------------- */
+
+    var input = "Javascript is awesome!";
+    // Original text
+
+    var output = "";
+    // Empty string to build the transformed version
+
+    for (i = 0; i < input.length; i++) {
+      // Loop through each character in the string
+
+      var letter = input[i];
+      console.log(letter);
+
+      // Replace certain letters with numbers (leet speak)
+      if (letter === "a") {
+        output += "4";
+      } else if (letter === "i") {
+        output += "1";
+      } else if (letter === "e") {
+        output += "3";
+      } else if (letter === "o") {
+        output += "0";
+      } else {
+        output += letter;
+        // If it's not one of the special letters, keep it the same
+      }
+    }
+
+    console.log(output);
+    // Final transformed string
+  </script>
+</body>
+</html>
