@@ -1,0 +1,116 @@
+// List of possible words for the game
+var words = [
+  "javascript",
+  "monkey",
+  "amazing",
+  "pancake",
+  "programmer",
+  "elephant",
+  "creative",
+  "browser",
+];
+
+// Function that picks a random word from the array
+var pickWord = function(words) {
+  // Math.random() picks a random number between 0 and 1
+  // Multiply by words.length to scale it to the array size
+  // Math.floor() turns it into a whole number index
+  return words[Math.floor(Math.random() * words.length)];
+};
+console.log(pickWord(words)); // Shows a random word in the console
+
+// Function that creates an array of underscores the same length as the word
+var setupAnswerArray = function (word) {
+  var answerArray = [];
+  // Loop through each letter in the word
+  for (var i = 0; i < word.length; i++){
+    answerArray[i] = "_"; // Fill each position with an underscore
+  }
+  return answerArray; // Return the array of underscores
+};
+
+var maxGuesses = 10;   // Maximum number of guesses allowed
+var guessesUsed = 0;   // How many guesses the player has used
+
+// Function that shows the player's current progress
+var showPlayerProgress = function (answerArray) {
+  alert(answerArray.join(" ")); // Join underscores with spaces and show them
+};
+
+// Function that gets a guess from the player
+var getGuess = function () {
+  var guess = prompt("Guess a letter, or click Cancel to stop playing."); 
+  
+  // If the player clicks Cancel, stop the game
+  if (guess === null) {
+    return null;
+  }
+
+  // Convert guess to lowercase so uppercase doesn't break the game
+  guess = guess.toLowerCase();
+
+  // Validate the guess: must be exactly one letter a–z
+  if (guess.length !== 1 || !guess.match(/[a-z]/)) {
+    alert("Please enter a single letter.");
+    // NOTE: This function does NOT return anything here,
+    // so the game loop will treat it as undefined
+  } else {
+    return guess; // Valid guess returned
+  }
+};
+
+// Function that updates the game state after a guess
+var updateGameState = function (guess, word, answerArray) {
+  // Loop through each letter in the word
+  for (var j = 0; j < word.length; j++) {
+    // If the guessed letter matches the letter at position j
+    if (word[j] === guess) {
+      answerArray[j] = guess; // Reveal the letter in the answer array
+      remainingLetters--;     // Reduce the number of letters left to guess
+    }
+  }
+  // NOTE: This function does NOT return anything,
+  // but your game loop expects a return value.
+};
+
+// Function that shows the final answer and congratulates the player
+var showAnswerAndCongratulatePlayer = function (answerArray) {
+  alert(answerArray.join(" ")); // Show the completed word
+  alert("Good job! The answer was " + word); // Show the final message
+};
+
+// Pick a random word for the game
+var word = pickWord(words);
+console.log(pickWord(word)); 
+// NOTE: This is incorrect — pickWord() expects an array, not a string
+
+// Create the answer array of underscores
+var answerArray = setupAnswerArray(word);
+console.log(answerArray); // Show the underscores in the console
+
+// Track how many letters are left to guess
+var remainingLetters = word.length;
+
+// Main game loop — runs until all letters are guessed
+while (remainingLetters > 0) {
+  showPlayerProgress(answerArray); // Show current progress
+
+  var guess = getGuess(); // Get a guess from the player
+
+  if (guess === null) {
+    break; // Player clicked Cancel — exit the loop
+  } else if (guess.length !== 1) {
+    // NOTE: This check is redundant — getGuess() already validates this
+    alert("Please enter a single letter.");
+  } else {
+    // Update the game state
+    var correctGuesses = updateGameState(guess, word, answerArray);
+
+    // NOTE: updateGameState() does not return anything,
+    // so correctGuesses is undefined and this line breaks:
+    remainingLetters -= correctGuesses;
+  }
+}
+
+// Show the final result
+showAnswerAndCongratulatePlayer(answerArray);
