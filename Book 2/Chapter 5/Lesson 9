@@ -1,0 +1,45 @@
+
+// Variable that will store the new name entered by the user
+var name1;
+
+// When the "Change Your Name" button is clicked, run the newName() function
+document.getElementById("changeName").onclick = newName;
+
+// Function that asks the user for a new name
+function newName () {
+  // Prompt box asking the user to type a name; result stored in name1
+  name1 = prompt("Enter a new name: ");
+
+  // Call another function to update the page with the new name
+  updateName();
+}
+
+// Function that updates the <h1> element with the new name
+function updateName () {
+  document.getElementById("myName").innerHTML = name1;
+}
+
+// Variables that will store the new list items
+var item1;
+var item2;
+var item3;
+
+// When the "Change Your List" button is clicked, run the newList() function
+document.getElementById("changeList").onclick = newList;
+
+// Function that asks the user for three new list items
+function newList () {
+  item1 = prompt("Enter a new first thing: ");
+  item2 = prompt("Enter a new second thing: ");
+  item3 = prompt("Enter a new third thing: ");
+
+  // Call another function to update the list on the page
+  updateList();
+}
+
+// Function that updates each <li> element with the new values
+function updateList () {
+  document.getElementById("firstThing").innerHTML = item1;
+  document.getElementById("secondThing").innerHTML = item2;
+  document.getElementById("thirdThing").innerHTML = item3;
+}
