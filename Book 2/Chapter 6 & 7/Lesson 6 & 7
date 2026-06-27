@@ -1,0 +1,121 @@
+
+// Change the left eye's background color to purple
+document.getElementById("lefteye").style.backgroundColor = "purple";
+
+// Rotate the head slightly to the left
+document.getElementById("head").style.transform = "rotate(-15deg)";
+
+// Add a solid black border around the body
+document.getElementById("body").style.border = "2px black solid";
+
+// Round the corners of the mouth
+document.getElementById("mouth").style.borderRadius = "4px";
+
+// Add a yellow dotted border to the right eye
+document.getElementById("righteye").style.border = "4px yellow dotted";
+
+// Change the left arm's background color to magenta
+document.getElementById("leftarm").style.backgroundColor = "#FF00FF";
+
+// Change the text color inside the body to red
+document.getElementById("body").style.color = "#FF0000";
+
+// Add a thick black border to the top of the head
+document.getElementById("head").style.borderTop = "5px black solid";
+
+// Make the nose perfectly round
+document.getElementById("nose").style.borderRadius = "50%";
+
+// Change the right arm's background color to a dark green
+document.getElementById("rightarm").style.backgroundColor = "#145b2e";
+
+// Add a pink solid border around the mouth
+document.getElementById("mouth").style.border = "4px #ff0084 solid";
+
+
+// --- EVENT LISTENER: RIGHT EYE ---
+
+// Grab the right eye element
+var rightEye = document.getElementById("righteye");
+console.log(rightEye); // Log it to confirm it exists
+
+// When the right eye is clicked, run moveUpDown()
+rightEye.addEventListener("click", moveUpDown);
+
+
+// Function to move a clicked part up and down
+function moveUpDown(e) {
+  var robotPart = e.target; // The element that was clicked
+  var top = 0;              // Starting top position
+
+  // Run the frame() function every 50ms
+  var id = setInterval(frame, 50);
+
+  function frame () {
+    robotPart.style.top = top + "%"; // Move the part down
+    top++;
+
+    // Stop animation when it reaches 20%
+    if (top === 20) {
+      clearInterval(id);
+    }
+  }
+}
+
+
+// --- EVENT LISTENER: LEFT EYE ---
+
+// Grab the left eye and attach the same moveUpDown animation
+var leftEye = document.getElementById("lefteye");
+leftEye.addEventListener("click", moveUpDown);
+
+
+// --- EVENT LISTENER: LEFT ARM ---
+
+// Grab the left arm and attach a left-right animation
+var leftArm = document.getElementById("leftarm");
+leftArm.addEventListener("click", moveRightLeft);
+
+
+// Function to move a clicked part left and right
+function moveRightLeft(e) {
+  var robotPart = e.target; // The element that was clicked
+  var left = 0;             // Starting left position
+
+  var id = setInterval(frame, 50);
+
+  function frame () {
+    robotPart.style.left = left + "%"; // Move the part to the right
+    left++;
+
+    // Stop animation when it reaches 70%
+    if (left === 70) {
+      clearInterval(id);
+    }
+  }
+}
+
+// --- EVENT LISTENER: NOSE ---
+
+// Grab the nose and attach a wiggle animation
+var nose = document.getElementById("nose");
+nose.addEventListener("click", wiggleUpDown);
+
+
+// Function to wiggle the nose slightly up and down
+function wiggleUpDown(e) {
+  var robotPart = e.target; // The element that was clicked
+  var top = 30;             // Starting top position
+
+  var id = setInterval(frame, 50);
+
+  function frame () {
+    robotPart.style.top = top + "%"; // Move the nose down
+    top++;
+
+    // Stop animation when it reaches 40%
+    if (top === 40) {
+      clearInterval(id);
+    }
+  }
+}
